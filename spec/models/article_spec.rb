@@ -17,6 +17,14 @@ RSpec.describe Article, type: :model do
           in_array(['Science', 'Aliens', 'Covid', 'Illuminati', 'Politics', 'Hollywood'])}
   end
 
+  describe 'Image attribute' do
+    subject { create(:article).image }
+
+    it {
+      is_expected.to be_an_instance_of ActiveStorage::Attached::One
+    }
+  end
+
   describe 'Relationship between article and user' do
     it { is_expected.to belong_to(:user) }
   end

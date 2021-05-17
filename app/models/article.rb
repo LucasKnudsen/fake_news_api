@@ -3,4 +3,5 @@ class Article < ApplicationRecord
   scope :most_recent, -> { order(created_at: :desc)}
   belongs_to :user
   validates :category, inclusion: { in: ['Science', 'Aliens', 'Covid', 'Illuminati', 'Politics', 'Hollywood']}
+  has_one_attached :image
 end
