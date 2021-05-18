@@ -42,8 +42,6 @@ class Api::ArticlesController < ApplicationController
 
   private
 
-  def method_name; end
-
   def article_params
     params[:article].permit(:title, :teaser, :body, :category, key: [:image])
   end
